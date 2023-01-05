@@ -7,8 +7,30 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="Textbox1" TextWrapping="Wrap" Text="TextBox" Margin="340,156,380,217" RenderTransformOrigin="0.975,2.266" />
-        <Button Content="Button" Margin="448,156,272,217" Click="Button_Click"/>
+        <Menu>
+            <MenuItem Header="_Edit">
+                <MenuItem Command="ApplicationCommands.Copy"/>
+                <MenuItem Command="ApplicationCommands.Cut"/>
+                <MenuItem Command="ApplicationCommands.Paste"/>
+            </MenuItem>
+            <MenuItem Header="_Font">
+                <MenuItem Header="_Bold" IsCheckable="True"
+              Checked="Bold_Checked"
+              Unchecked="Bold_Unchecked"/>
+                <MenuItem Header="_Italic" IsCheckable="True"
+              Checked="Italic_Checked"
+              Unchecked="Italic_Unchecked"/>
+                <Separator/>
+                <MenuItem Header="I_ncrease Font Size"
+              Click="IncreaseFont_Click"/>
+                <MenuItem Header="_Decrease Font Size"
+              Click="DecreaseFont_Click"/>
+            </MenuItem>
+        </Menu>
+        <TextBox Name="textBox1" TextWrapping="Wrap"
+         Margin="0,24,4,-20">
+            The quick brown fox jumps over the lazy dog.
+        </TextBox>
 
     </Grid>
 </Window>
